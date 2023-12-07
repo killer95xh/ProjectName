@@ -21,3 +21,6 @@
     <script src="{{asset('assets/js/script.js')}}"></script>
 </head>
 <body>
+{{--Slide HTML--}}
+@include('slide_header')
+{{--End Slide HTML--}}
