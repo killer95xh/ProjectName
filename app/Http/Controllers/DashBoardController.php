@@ -5,21 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class DashBoardController extends Controller
 {
 
-    public function index() {
-        $data = [
-            'name' => 1,
-            'phone' => 2,
-        ];
-        return view('admin.layouts.dashboard', ['data' => $data]);
+    public function __construct()
+    {
+//        $this->middleware('auth:login', ['except' => []]);
     }
 
-    public function ConectDB() {
-        $id = '127';
-        $finanDiscount = DB::table('users')->where('user_id', '=', $id)->first();
-        dd($finanDiscount);
+    public function index(Request $request) {
+        $checkuser = Auth::check();
+//        dd($checkuser);
+//        if(Auth::check()){
+            $SessionAdmin = $request->session()->all();
+            $data = [
+                'session' => $SessionAdmin
+            ];
+            return view('admin.layouts.dashboard', ['data' => $data]);
+//        }
+//        return redirect("admin")->withSuccess('You are not allowed to access');
     }
 }

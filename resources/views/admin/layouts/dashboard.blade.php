@@ -46,8 +46,11 @@
                         </svg></a></li>
             </ul>
             <ul class="header-nav ms-3">
-                <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com"></div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar avatar-md">
+                            <img class="avatar-img" src="{{asset('assets/images/avatars/8.jpg')}}" alt="{{ $data['session']['user_email'] }}">
+                        </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end pt-0">
                         <div class="dropdown-header bg-light py-2">
@@ -80,13 +83,17 @@
                             <svg class="icon me-2">
                                 <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-file"></use>
                             </svg> Projects<span class="badge badge-sm bg-primary ms-2">42</span></a>
-                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
                             <svg class="icon me-2">
                                 <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
-                            </svg> Lock Account</a><a class="dropdown-item" href="#">
+                            </svg> Lock Account
+                        </a>
+                        <a class="dropdown-item" href="{{ route('signout') }}">
                             <svg class="icon me-2">
                                 <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-                            </svg> Logout</a>
+                            </svg> Logout
+                        </a>
                     </div>
                 </li>
             </ul>

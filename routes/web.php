@@ -24,13 +24,15 @@ Route::get('/', function () {
 });
 Route::any('/admin', [LoginController::class, 'index']);
 Route::any('/login', [LoginController::class, 'login']);
+Route::get('signout', [LoginController::class, 'signOut'])->name('signout');
 
 
 Route::post('/send-mail', [SendMailController::class, 'index']);
-Route::any('/dash-board', [DashBoardController::class, 'index']);
+Route::any('/dashboard', [DashBoardController::class, 'index']);
 Route::post('/header', [HeaDerController::class, 'index']);
 Route::post('/footer', [FooTerController::class, 'index']);
 Route::post('/products', [ProDuctsController::class, 'index']);
+
 
 
 

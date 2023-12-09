@@ -1,5 +1,6 @@
 @include('admin.layouts.header')
 
+@section('content')
 <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
     <div class="container">
         <div class="row justify-content-center">
@@ -17,7 +18,7 @@
                                             <use xlink:href="{{asset('assets/vendors/@coreui/icons/svg/free.svg#cil-user')}}"></use>
                                         </svg>
                                     </span>
-                                    <input class="form-control" type="text" name="username" placeholder="Username">
+                                    <input class="form-control" type="text" name="user_email" placeholder="Username">
                                 </div>
                                 <div class="input-group mb-4">
                                     <span class="input-group-text">
